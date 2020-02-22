@@ -1,0 +1,36 @@
+
+<head> 
+    <style> 
+
+
+            form{
+                color: rgb(207, 207, 207);
+                
+                
+            }
+            button{
+                color: rgb(0, 0, 0);
+                background: rgb(101, 207, 133);
+               
+                border: none;
+                border-radius: 25px;
+            }
+           
+
+     </style>
+</head>
+<body>
+    
+
+{% extends "learning_logs/base.html" %}
+{% block content %}
+    <form method="post" action="{% url 'users:register' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+    
+        <button name="submit">register</button>
+        <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+    </form>
+{% endblock content %}
+
+</body>

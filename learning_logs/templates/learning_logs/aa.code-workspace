@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "/home/pranshu-pop/Documents/program_practice"
+		},
+		{
+			"path": "/home/pranshu-pop/Documents/django"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.tcc": "cpp",
+			"string": "cpp",
+			"string_view": "cpp",
+			"fstream": "cpp",
+			"istream": "cpp",
+			"ostream": "cpp",
+			"sstream": "cpp",
+			"stdexcept": "cpp",
+			"system_error": "cpp",
+			"typeinfo": "cpp"
+		},
+		"liveServer.settings.multiRootWorkspaceName": "django"
+	}
+}

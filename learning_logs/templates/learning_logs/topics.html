@@ -1,0 +1,30 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+
+
+    {% block header %}
+        <style>
+            h2{
+                color: white;
+            }   
+        </style>
+        <h2>Topics</h2>
+    {% endblock header %}
+
+    <ul>
+        {% for topic in topics %}
+            <h4>
+                <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+            </h4>
+        {% empty %}
+            <style>
+                li{
+                    color: rgb(0, 255, 136);
+                }
+            </style>
+            <li>No topics have been added yet.</li>
+        {% endfor %}
+    </ul>
+    <h3><a href="{% url 'learning_logs:new_topic' %}">Add new topic</h3>
+{% endblock content %}

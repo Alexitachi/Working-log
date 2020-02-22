@@ -1,0 +1,43 @@
+{% extends "learning_logs/base.html" %}
+{% load bootstrap3 %}
+<html>
+    <head> 
+  
+</head>
+<body> 
+{% block header %}
+    <h2>Log in to your account.</h2>
+{% endblock header %}
+{% block content %}
+    {% if form.errors %}
+    <style>
+        p{
+            color: white;
+        }
+</style>
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+         <style>
+            form{
+                color: white;
+                }
+        </style>
+        <form method="post" action="{% url 'users:login' %}">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <style>
+        button{
+            color: black;
+            background:rgb(66, 245, 161);
+        }
+</style>
+        <button class="btn btn-dark" name="submit">Log in</button>
+    {% endbuttons %}
+
+    <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+    </form>
+
+</body>
+</html>    
+{% endblock content %}
